@@ -8,6 +8,12 @@ local options = {
     beautysh = {
       prepend_args = { "--indent-size", "2" },
     },
+    clang_format = {
+      prepend_args = {
+        "--style=file",        -- 关键：从项目根目录查找 .clang-format 文件
+        "--fallback-style=google" -- 备选方案：若无配置文件，使用 LLVM 风格
+      }
+    }
   },
   formatters_by_ft = {
     astro = { "stylelint", "prettierd", "eslint_d" },

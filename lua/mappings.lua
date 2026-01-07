@@ -35,3 +35,7 @@ map({ "n", "i", "v" }, "<F2>", function()
   end
 end, { desc = "LSP rename" })
 map({ "n", "i", "v" }, "<F12>", vim.lsp.buf.definition, { desc = "LSP rename" })
+
+map("n", "<leader>gh", function() require("gitsigns").toggle_linehl() end, { desc = "Git show changes" })
+map("n", "<leader>gp", function() require("gitsigns").preview_hunk() end, { desc = "Git show hunk" })
+map("n", "<leader>gr", function() require("gitsigns").reset_hunk() end, { desc = "Git Rest this line" })
